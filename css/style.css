@@ -1,36 +1,210 @@
+@media (max-width: 480px) {}
+
 body {
-  font-family: sans-serif;
+    font-family: sans-serif;
+    color: #373D3F;
+    margin: 0;
 }
 
-/* Make content area fill the entire browser window */
-html, .fullscreen {
-  display: flex;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: rgb(2,0,36);
-  background: linear-gradient(21deg, rgba(2,0,36,1) 0%, rgba(166,228,121,1) 0%, rgba(96,145,88,1) 100%);
+header {
+    font-family: 'MV Boli', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3em;
+    background-color: rgb(236, 103, 103);
+    color: aliceblue;
+    padding: 0 1em 0 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
-/* Center the content in the browser window */
-.container {
-  margin: auto;
-  text-align: center;
+header>img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    height: 1em;
+    width: auto;
+    border: 0;
+    margin: .3em auto auto auto;
+    float: right;
 }
 
-.custom_button {
-  background-color: #5b6f5c;
-  border: none;
-  color: white;
-  font-size: 4vw;
-  padding: 10px;
-  position:absolute;
-  bottom:0;
-  right:0;
-  left: 0;
+.me {
+    margin-top: 4.9em;
+    background-color: rgb(236, 92, 92);
+    color: aliceblue;
+    height: 16em;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+    object-fit: cover;
+    border: .2em solid #000000;
+    border-radius: 100%;
+}
+
+#owner {
+    height: 12em;
+    width: 12em;
+    margin: 2em 2em 2em 7em;
+}
+
+.list {
+    margin: 0em 2em 0em 2em;
+}
+
+.friend {
+    padding: 1em;
+    border-bottom: .1em solid #a5a5a5;
+    position: relative;
+}
+
+.friend>img {
+    height: 6em;
+    width: 6em;
+}
+
+.friend>span {
+    font-size: 2em;
+    margin: 0 1em;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#menuAdd {
+    height: 4em;
+    width: 4em;
+    margin-bottom: 2em;
+}
+
+.subMenu {
+    height: 2em;
+    width: 2em;
+    margin-bottom: 1em;
+}
+
+#subMenu1 {
+    visibility: collapse;
+}
+
+#subMenu2 {
+    visibility: collapse;
+}
+
+main {
+    text-align: left;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+
+.you {
+    margin-top: 4.9em;
+    background-color: rgb(236, 92, 92);
+    color: aliceblue;
+    height: 16em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.you>div {
+    position: relative;
+}
+
+.you>div span {
+    font-size: 5em;
+    margin: 0 .4em;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.you>div img {
+    margin-left: 8em;
+}
+
+#back {
+    border: 0;
+    height: 3em;
+    width: auto;
+    position: absolute;
+    top: 0%;
+    margin: 1em;
+}
+
+.attributes {
+    position: relative;
+}
+
+.attribute {
+    padding: 1em;
+    border-bottom: .1em solid #a5a5a5;
+    position: relative;
+    margin: 0;
+}
+
+
+.attribute>img {
+    height: 6em;
+    width: 6em;
+    border: 0;
+}
+
+.attribute>span {
+    font-size: 2em;
+    margin: .5em 1em .5em 1em;
+    position: absolute;
 }
 
 .title {
-  font-size: 5vw;
+    position: absolute;
+    top: 0;
+}
+
+.content {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+body>span {
+    font-size: 2em;
+    font-style: bold;
+    display: table;
+    margin: 1em auto;
+    color: rgb(236, 92, 92);
+}
+
+.messages {
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+.message img {
+    border: 0;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    padding: 1em;
+    border-radius: .5em;
+    margin: 3em;
+    color: aliceblue;
+    background-color: rgb(236, 92, 92);
+    border: 0;
+}
+
+#sendMessage {
+    text-align: center;
 }
