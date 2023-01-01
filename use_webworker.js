@@ -20,5 +20,3 @@ worker.addEventListener("message", function(messageEvent) {
   log.textContent = messageEvent.data;
   document.querySelector("output.webworker").prepend(log);
 });
-
-
