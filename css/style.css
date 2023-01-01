@@ -1,17 +1,15 @@
-@media (max-width: 480px) {}
-
 body {
     font-family: sans-serif;
     color: #373D3F;
     margin: 0;
+    max-width: 1500px;
+    margin: auto;
 }
 
 header {
     font-family: 'MV Boli', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 3em;
     background-color: rgb(236, 103, 103);
     color: aliceblue;
-    padding: 0 1em 0 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: fixed;
     top: 0;
@@ -22,68 +20,34 @@ header {
 header>img {
     -webkit-filter: invert(1);
     filter: invert(1);
-    height: 1em;
     width: auto;
-    border: 0;
-    margin: .3em auto auto auto;
+    box-shadow: 0 0;
     float: right;
 }
 
 .me {
-    margin-top: 4.9em;
     background-color: rgb(236, 92, 92);
     color: aliceblue;
-    height: 16em;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 img {
     object-fit: cover;
-    border: .2em solid #000000;
     border-radius: 100%;
-}
-
-#owner {
-    height: 12em;
-    width: 12em;
-    margin: 2em 2em 2em 7em;
-}
-
-.list {
-    margin: 0em 2em 0em 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .friend {
-    padding: 1em;
     border-bottom: .1em solid #a5a5a5;
     position: relative;
 }
 
-.friend>img {
-    height: 6em;
-    width: 6em;
-}
-
 .friend>span {
-    font-size: 2em;
-    margin: 0 1em;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
-
-#menuAdd {
-    height: 4em;
-    width: 4em;
-    margin-bottom: 2em;
-}
-
-.subMenu {
-    height: 2em;
-    width: 2em;
-    margin-bottom: 1em;
 }
 
 #subMenu1 {
@@ -109,10 +73,8 @@ footer {
 }
 
 .you {
-    margin-top: 4.9em;
     background-color: rgb(236, 92, 92);
     color: aliceblue;
-    height: 16em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -121,48 +83,35 @@ footer {
 }
 
 .you>div span {
-    font-size: 5em;
-    margin: 0 .4em;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
-.you>div img {
-    margin-left: 8em;
-}
-
 #back {
-    border: 0;
-    height: 3em;
+    box-shadow: 0 0;
     width: auto;
     position: absolute;
     top: 0%;
-    margin: 1em;
 }
 
 .attributes {
     position: relative;
 }
 
+
 .attribute {
-    padding: 1em;
     border-bottom: .1em solid #a5a5a5;
     position: relative;
-    margin: 0;
 }
 
-
-.attribute>img {
-    height: 6em;
-    width: 6em;
-    border: 0;
+.message {
+    padding-bottom: 1em;
+    border-bottom: .1em solid #a5a5a5;
 }
 
 .attribute>span {
-    font-size: 2em;
-    margin: .5em 1em .5em 1em;
     position: absolute;
 }
 
@@ -178,33 +127,316 @@ footer {
 }
 
 body>span {
-    font-size: 2em;
     font-style: bold;
     display: table;
-    margin: 1em auto;
     color: rgb(236, 92, 92);
 }
 
-.messages {
-    margin: 1em;
-    font-size: 1.5em;
-}
-
 .message img {
-    border: 0;
     width: 100%;
     height: auto;
+    border-radius: 0;
 }
 
 button {
-    padding: 1em;
-    border-radius: .5em;
-    margin: 3em;
     color: aliceblue;
     background-color: rgb(236, 92, 92);
     border: 0;
 }
 
+#comingSoon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#comingSoonImg {
+    box-shadow: 0 0;
+    border-radius: 0;
+    width: 80%;
+    height: auto;
+}
+
+button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #sendMessage {
     text-align: center;
+}
+
+#dialogSendMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+dialog>div {
+    color: aliceblue;
+    background-color: rgb(236, 92, 92);
+}
+
+dialog>input {
+    width: 80%;
+}
+
+@media (max-width: 600px) {
+    header {
+        font-size: 1.5em;
+        padding: 0 .5em 0 1em;
+    }
+
+    header>img {
+        height: 1em;
+        margin: .3em auto auto auto;
+    }
+
+    .me {
+        margin-top: 2.45em;
+        height: 8em;
+    }
+
+    #owner {
+        height: 6em;
+        width: 6em;
+        margin: 1em 1em 1em 3.5em;
+    }
+
+    .list {
+        margin: 0em 1em 0em 1em;
+    }
+
+    .friend {
+        padding: .5em;
+    }
+
+    .friend>img {
+        height: 3em;
+        width: 3em;
+    }
+
+    .friend>span {
+        font-size: 1em;
+        margin: 0 .5em;
+    }
+
+    #menuAdd {
+        height: 2em;
+        width: 2em;
+        margin-bottom: 1em;
+    }
+
+    .subMenu {
+        height: 1em;
+        width: 1em;
+        margin-bottom: .5em;
+    }
+
+    .you {
+        margin-top: 2.45em;
+        height: 8em;
+    }
+
+    .you>div span {
+        font-size: 2.5em;
+        margin: 0 .4em;
+    }
+
+    .you>div img {
+        margin-left: 4em;
+    }
+
+    #back {
+        height: 1.5em;
+        margin: .5em;
+    }
+
+    .attribute {
+        padding: .5em;
+        margin: .5em;
+    }
+
+    .attribute>img {
+        height: 3em;
+        width: 3em;
+        border: 0;
+    }
+
+    .attribute>span {
+        font-size: 1em;
+        margin: .5em 1em .5em 1em;
+    }
+
+    body>span {
+        font-size: 1em;
+        margin: .5em auto;
+    }
+
+    .messages {
+        margin: .5em;
+        font-size: 1em;
+    }
+
+    button {
+        padding: .5em;
+        border-radius: .5em;
+        margin: 1.5em;
+    }
+
+    #comingSoonImg {
+        padding: .5em;
+    }
+
+    dialog>div {
+        margin: 0;
+        padding: .5em 1em .5em 1em;
+        font-size: 1em;
+    }
+
+    dialog {
+        margin: 0;
+        padding: 0;
+    }
+
+    #notification {
+        font-size: 5em;
+    }
+}
+
+@media (min-width: 600px) {
+    header {
+        font-size: 3em;
+        padding: 0 1em 0 1em;
+    }
+
+    header>img {
+        height: 1em;
+        margin: .3em auto auto auto;
+    }
+
+    .me {
+        margin-top: 4.9em;
+        height: 16em;
+    }
+
+    #owner {
+        height: 12em;
+        width: 12em;
+        margin: 2em 2em 2em 7em;
+    }
+
+    .list {
+        margin: 0em 2em 0em 2em;
+    }
+
+    .friend {
+        padding: 1em;
+    }
+
+    .friend>img {
+        height: 6em;
+        width: 6em;
+    }
+
+    .friend>span {
+        font-size: 2em;
+        margin: 0 1em;
+    }
+
+    #menuAdd {
+        height: 4em;
+        width: 4em;
+        margin-bottom: 2em;
+    }
+
+    .subMenu {
+        height: 2em;
+        width: 2em;
+        margin-bottom: 1em;
+    }
+
+    .you {
+        margin-top: 4.9em;
+        height: 16em;
+    }
+
+    .you>div span {
+        font-size: 5em;
+        margin: 0 .4em;
+    }
+
+    .you>div img {
+        margin-left: 8em;
+    }
+
+    #back {
+        height: 3em;
+        margin: 1em;
+    }
+
+    .attribute {
+        padding: 1em;
+        margin: 1em;
+    }
+
+    .attribute>img {
+        height: 6em;
+        width: 6em;
+        border: 0;
+    }
+
+    .attribute>span {
+        font-size: 2em;
+        margin: .5em 1em .5em 1em;
+    }
+
+    body>span {
+        font-size: 2em;
+        margin: 1em auto;
+    }
+
+    .messages {
+        margin: 1em;
+        font-size: 1.5em;
+    }
+
+    button {
+        padding: 1em;
+        border-radius: .5em;
+        margin: 3em;
+    }
+
+    #comingSoonImg {
+        padding: 1em;
+    }
+
+    dialog>div {
+        margin: 0;
+        padding: .5em 1em .5em 1em;
+        font-size: 2em;
+    }
+
+    dialog {
+        margin: 0;
+        padding: 0;
+    }
+
+    #notification {
+        font-size: 10em;
+    }
 }

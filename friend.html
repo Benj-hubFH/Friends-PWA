@@ -16,6 +16,8 @@ LAST CHANGE: 30.12.2022
 
   <link rel="stylesheet" href="css/style.css">
 
+  <script defer src="scriptFriend.js"></script>
+
 </head>
 
 <body class="fullscreen">
@@ -33,39 +35,23 @@ LAST CHANGE: 30.12.2022
 
   <span>About me:</span>
 
-  <section class="attributes">
-    <div class="attribute">
-      <img src="img\attribute.png" alt="you!">
-      <span class="title">title</span>
-      <span class="content">attribute</span>
-
-    </div>
-    <div class="attribute">
-      <img src="img\attribute.png" alt="you!">
-      <span class="title">title</span>
-      <span class="content">attribute</span>
-    </div>
-    <div class="attribute">
-      <img src="img\attribute.png" alt="you!">
-      <span class="title">title</span>
-      <span class="content">attribute</span>
-    </div>
-  </section>
-
+  <section id="listAttributes" class="attributes"></section>
   <span>My Message to You:</span>
-  <section class="messages">
-    <div class="message">
-      <div>I glaub du hast den Kontest für bestes Foto gewonnen. :)</div>
-      <img src="img\img_dummy.png" alt="you!">
-    </div>
+
+  <section id="listMessages" class="messages">
   </section>
 
   <section id="sendMessage">
-    <button>
-    Send Message
-  </button>
+    <button id="sendBtn" type="button" onclick="openWindow()">Send Message</button>
 </section>
-  
+
+<dialog id="dialogSendMessage">
+  <div width="100%">Sending Message...</div>
+  <input type="text" id="content">
+  <button type="button" onclick="sendMessage()">Send Message</button>
+</dialog>
+
+<dialog id="notification"></dialog>
   <footer></footer>
 </body>
 </html>
