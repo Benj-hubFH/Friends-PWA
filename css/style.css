@@ -4,6 +4,7 @@ body {
     margin: 0;
     max-width: 1500px;
     margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 header {
@@ -15,14 +16,25 @@ header {
     top: 0;
     width: 100%;
     z-index: 1;
+    max-width: 1500px;
+    margin: 0;
 }
 
-header>img {
+header img {
     -webkit-filter: invert(1);
     filter: invert(1);
+    border-radius: 0;
+    box-shadow: 0 0 ;
+}
+
+header div {
     width: auto;
-    box-shadow: 0 0;
     float: right;
+}
+
+header input {
+    width: auto;
+    visibility: collapse;
 }
 
 .me {
@@ -70,6 +82,8 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0px;
+    max-width: 1500px;
+    margin: 0;
 }
 
 .you {
@@ -146,11 +160,11 @@ button {
 
 #comingSoon {
     position: fixed;
+    text-align: center;
     top: 50%;
     left: 50%;
     border: 0;
     transform: translate(-50%, -50%);
-    text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     justify-content: center;
     align-items: center;
@@ -162,9 +176,11 @@ button {
     border-radius: 0;
     width: 80%;
     height: auto;
+    margin: auto;
 }
 
 button {
+    margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -173,7 +189,7 @@ button {
 }
 
 #dialogSendMessage {
-    position: fixed;
+    position: flex;
     top: 50%;
     left: 50%;
     border: 0;
@@ -195,19 +211,37 @@ dialog>input {
     width: 80%;
 }
 
+#notification {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    background-color: gray;
+    color:  aliceblue;
+    border-radius: 1em;
+    padding: 0 1em 0 1em;
+    margin:1em;
+    border-color: gray;
+}
+
 @media (max-width: 600px) {
     header {
         font-size: 1.5em;
-        padding: 0 .5em 0 1em;
     }
 
-    header>img {
+    header span {
+        margin: 0 0 0 1em;
+    }
+
+    header img {
         height: 1em;
-        margin: .3em auto auto auto;
+        margin: .3em 1em auto auto;
     }
 
     .me {
-        margin-top: 2.45em;
+        margin-top: 2.4em;
         height: 8em;
     }
 
@@ -314,19 +348,22 @@ dialog>input {
     }
 
     #notification {
-        font-size: 5em;
+        font-size: 2em;
     }
 }
 
 @media (min-width: 600px) {
     header {
         font-size: 3em;
-        padding: 0 1em 0 1em;
     }
 
-    header>img {
+    header span {
+        margin: .0 0 0 1em;
+    }
+
+    header img {
         height: 1em;
-        margin: .3em auto auto auto;
+        margin: .3em 1em auto auto;
     }
 
     .me {
@@ -437,6 +474,6 @@ dialog>input {
     }
 
     #notification {
-        font-size: 10em;
+        font-size: 2em;
     }
 }

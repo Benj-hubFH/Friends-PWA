@@ -6,7 +6,7 @@ created by Benjamin Lamprecht
 
 
 var sendBtn = document.getElementById('sendBtn');
-var resetBtn = document.getElementById('back');
+
 
 var friend;
 var attributes;
@@ -20,40 +20,58 @@ function getSession() {
 }
 
 async function init() {
-    friend = JSON.parse(getSession());
-    let attributes = JSON.parse(friend.attributes);
-    for (let i = 0; i < attributes.length; i++) {
-        let attribute = JSON.parse(attributes[i]);
-        await createAttributeLine(attribute.title, attribute.content);
-    }
 
-    let messages = JSON.parse(friend.messages);
-    for (let i = 0; i < messages.length; i++) {
-        let message = JSON.parse(messages[i]);
-        await createMessageLine(message.text, message.img);
+
+    friend = JSON.parse(getSession());
+    var tabName = document.getElementById("tabName");
+    var ownerImage = document.getElementById("owner");
+    var ownerName = document.getElementById("ownerName");
+
+    tabName.innerHTML = friend.name;
+    ownerImage.src = friend.img;
+    ownerName.innerText = friend.name;
+
+    try {
+        let attributes = JSON.parse(friend.attributes);
+        for (let i = 0; i < attributes.length; i++) {
+            let attribute = JSON.parse(attributes[i]);
+            await createAttributeLine(attribute.title, attribute.content);
+        }
+    } catch {
+        console.log("no attributes");
+    }
+    try {
+        let messages = JSON.parse(friend.messages);
+        for (let i = 0; i < messages.length; i++) {
+            let message = JSON.parse(messages[i]);
+            await createMessageLine(message.text, message.img);
+        }
+    } catch {
+        console.log("no messages");
     }
 
 }
 
-async function openWindow()
-{
-   dialog.showModal();
+async function openWindow() {
+    dialog.showModal();
 }
 
 async function sendMessage() {
     dialog.close();
+    if (document.getElementById('content').value != '') {
+        notification.innerHTML = "Message sent: " + document.getElementById('content').value;
 
-    notification.innerHTML = document.getElementById('content').value;
-    notification.showModal();
+        notification.showModal();
 
-    setTimeout(function (){
-        notification.close();
-        console.log("goddammit!")
-    }, 3000);
+        setTimeout(function () {
+            notification.close();
+            console.log("goddammit!");
+        }, 3000);
+    }
 }
 
 function back() {
-    parent.location='friends.html';
+    parent.location = 'index.html';
 }
 
 init();

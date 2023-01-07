@@ -4,28 +4,79 @@ created by Benjamin Lamprecht
 */
 
 var friends = [];
+var section = document.getElementById("list");
 var menuBtn = document.getElementById('menuAdd');
 var subMenu1 = document.getElementById('subMenu1');
 var subMenu2 = document.getElementById('subMenu2');
 var btnClicked = false;
+var searchClicked = false;
 var dialog = document.getElementById("comingSoon");
-
+var searchBtn = document.getElementById("searchIcon");
+var searchInput = document.getElementById("search");
 var me = document.getElementById('owner');
-    
+let intervalId;
+var filter = '';
+
 async function init() {
     await dummyValues();
+    postFriends(friends);
+}
+
+searchBtn.addEventListener('click', event => {
+    searchClicked = !searchClicked;
+
+    if (searchClicked) {
+        searchInput.style.visibility = 'visible';
+        intervalId = setInterval(filterFriends, 1000);
+    }
+    else {
+        searchInput.style.visibility = 'collapse';
+        clearInterval(intervalId);
+        postFriends(friends);
+    }
+});
 
 
-    for (let i = 0; i < friends.length; i++) {
-        let friend = JSON.parse(friends[i]);
-        createLine(friend.name, friend.img, friends[i]);
+
+function filterFriends() {
+    if (searchInput.value != filter) {
+        filter = searchInput.value.toLowerCase();
+
+        let filteredFriends = [];
+
+        // check if list contains searchquery
+        for (let i = 0; i < friends.length; i++) {
+            let friend = JSON.parse(friends[i]);
+            if (friend.name.toLowerCase().includes(searchInput.value)) {
+                filteredFriends.push(friends[i]);
+            }
+        }
+
+        // create new list based on filter
+        postFriends(filteredFriends);
+    }
+    if (searchInput.value == ''){
+        postFriends(friends);
+    }
+}
+
+function postFriends(array) {
+    let friendsContainers = document.querySelectorAll('.friend');
+
+        friendsContainers.forEach(friend => {
+            friend.remove();
+        });
+
+    for (let i = 0; i < array.length; i++) {
+        let friend = JSON.parse(array[i]);
+        createLine(friend.name, friend.img, array[i]);
     }
 }
 
 menuBtn.addEventListener('click', event => {
     btnClicked = !btnClicked;
 
-    if(btnClicked) {
+    if (btnClicked) {
         menuBtn.style.transform = 'rotate(45deg)';
         subMenu1.style.visibility = 'visible';
         subMenu2.style.visibility = 'visible';
@@ -45,9 +96,8 @@ subMenu2.addEventListener('click', event => {
     openWindow();
 });
 
-async function openWindow()
-{
-   dialog.showModal();
+async function openWindow() {
+    dialog.showModal();
 }
 
 async function closeWindow() {
@@ -80,12 +130,11 @@ function createMessage(text, img) {
 }
 
 async function createLine(name, img, string) {
-    let section = document.getElementById("list");
     let friend = document.createElement("div");
     let image = document.createElement("img");
     let nameSpan = document.createElement("span");
 
-    friend.className = "friend"
+    friend.className = "friend";
     image.src = await img;
     nameSpan.innerHTML = name;
 
@@ -96,7 +145,7 @@ async function createLine(name, img, string) {
 
     friend.addEventListener('click', event => {
         setSession(string);
-        parent.location='friend.html';
+        parent.location = 'friend.html';
     });
 }
 
@@ -115,7 +164,7 @@ async function dummyValues() {
     let attributes = await JSON.stringify(attributeArray);
 
     let messageArray = [];
-    messageArray.push(await createMessage("I glaub du hast den Kontest für bestes Foto gewonnen. :)", "img\img_dummy.png"));
+    messageArray.push(await createMessage("I glaub du hast den Kontest für bestes Foto gewonnen. :)", "img/img_dummy.png"));
 
     let messages = JSON.stringify(messageArray);
 
